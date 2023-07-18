@@ -1,0 +1,39 @@
+
+
+
+    
+# Curl commands for REST Server resource Testfileds
+# Post
+curl -X POST -H "Content-Type: application/json" \
+-d '{"Password": "sample string"}' \
+http://localhost:9898/v1/testfileds
+
+# Get
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:9898/v1/testfileds
+
+# Put
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Password": "sample string"}' \
+http://localhost:9898/v1/testfileds/123
+
+# Put
+### wrong id passed in param
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Password": "sample string"}' \
+http://localhost:9898/v1/testfileds/1234
+
+# Get  (retrieve specific Testfileds)
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:9898/v1/testfileds/123
+
+# Delete
+curl -X DELETE -H "Content-Type: application/json" \
+http://localhost:9898/v1/testfileds/123
+
+    
+
+# when mysql throws error about server connection, fire below commands
+# CREATE USER 'root'@'%' IDENTIFIED BY 'password';
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
